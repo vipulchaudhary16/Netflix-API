@@ -17,6 +17,8 @@ app.get('/', (req, res) => {
     res.send('Hello from netflix API!');
 });
 
+app.use('/manage', require('./routes/manage'));
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
