@@ -23,7 +23,7 @@ Content-Type : application/json
 This endpoint will seed data to database
 ```
 If database is already seeded then
-    it will return : `Database is already seeded`
+    it will return : `Data already seeded`
 ​else
     ​It will return `Data seeded successfully`
 ```
@@ -35,7 +35,7 @@ If database is already seeded then
 This endpoint will be useful for resetting the database.
 ```
 ​if database is already cleaned then
-​   it will return `Database is empty`
+​   it will return `No Data`
 else
 ​   it will return `All data deleted successfully`
 ```
