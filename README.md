@@ -1,66 +1,50 @@
 ## Netflix API
-
 It's an API for fetching Netflix shows
 
 #### Host
-
 ```
 http://
 ```
 
-
-
 #### Header
-
 ```js
 Content-Type : application/json
 ```
-
-
-
 #### Endpoints
 
 |            Endpoint | Method | Description              |
 | ------------------: | ------ | ------------------------ |
-|      `/manage/seed` | POST   | To seed data to database |
+|      `/manage/seed` | POST     | To seed data to database |
 | ```/manage/reset``` | DELETE | To reset database        |
-|             `/list` | GET    | To list shows            |
+|             `/list`               | GET       | To list shows            |
+---
+### Endpoint 1: ```/manage/seed```
 
-1. **/manage/seed**
+This endpoint will seed data to database
+```
+If database is already seeded then
+    it will return : `Database is already seeded`
+​else
+    ​It will return `Data seeded successfully`
+```
+​Note: as we have almost 8000+ documents so it will take long time to seed, almost 5 minutes.
 
-* This endpoint will seed data to database
+---
+### Endpoint 2: ```/manage/reset```
 
-  If database is already seeded then
+This endpoint will be useful for resetting the database.
+```
+​if database is already cleaned then
+​   it will return `Database is empty`
+else
+​   it will return `All data deleted successfully`
+```
+---
+### Endpoint 3: ```/list```
 
-  ​	it will return : `Database is already seeded`
+This endpoint is useful for search, filter and sort queries
 
-​		else
-
-​			It will return `Data seeded successfully`
-
-​	Note: as we have almost 8000+ documents so it will take long time to seed, almost 5 minutes.
-
-
-
-2. **/manage/reset**
-
-* This endpoint will be useful for resetting the database.
-
-​	if database is already cleaned then
-
-​		it will return `Database is empty`
-
-​	else
-
-​		it will return `All data deleted successfully`
-
-
-
-3. **/list**
-
-* This endpoint is useful for search, filter and sort queries
-
-* It has some query parameter, as mentioned below with example value
+It has some query parameter, as mentioned below with example value
 
 |     Query Params | Description                                                  | Possible value              |
 | ---------------: | ------------------------------------------------------------ | --------------------------- |
@@ -73,8 +57,6 @@ Content-Type : application/json
 | max_release_year | add higher bound value for release year range query          | 2022                        |
 |           rating | add value of rating if you want to filter based on rating    | TV-MA                       |
 |             sort | Sort based on 'date_added' or 'release_year'                 | date_added or date_released |
-
-
 
 ### Examples
 
