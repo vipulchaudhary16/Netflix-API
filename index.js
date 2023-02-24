@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 7000;
 
 connectToDatabase()
 
@@ -17,7 +17,6 @@ app.get('/', (req, res) => {
     res.send('Hello from netflix API!');
 });
 
-app.use('/manage', require('./routes/manage'));
 app.use('/list', require('./routes/list'));
 
 app.listen(PORT, () => {
